@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 	private Rigidbody rigidBody;
 	private AudioSource audioSource;
 
+	public bool isInPlay = false;
 	public Vector3 launchVelocity;
 
 	// Use this for initialization
@@ -14,12 +15,17 @@ public class Ball : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource> ();
 
-		Launch ();
+		rigidBody.useGravity = false;
 	}
 
-	public void Launch ()
+	public void Launch (Vector3 velocity)
 	{
-		rigidBody.velocity = launchVelocity;
+		isInPlay = true;
+
+		rigidBody.useGravity = true;
+		rigidBody.velocity = velocity;
+
 		audioSource.Play ();
 	}
+	
 }
