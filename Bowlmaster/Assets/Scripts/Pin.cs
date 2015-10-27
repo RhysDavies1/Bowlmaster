@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Pin : MonoBehaviour {
 
-	public float standingThreshold = 3f;
+	public float standingThreshold = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +21,8 @@ public class Pin : MonoBehaviour {
 
 		Vector3 rotationInEuler = transform.rotation.eulerAngles;
 
-		float tiltInX = Mathf.Abs (rotationInEuler.x);
-		float tiltInZ = Mathf.Abs (rotationInEuler.z);
+		float tiltInX = Mathf.Abs(Mathf.DeltaAngle(rotationInEuler.x, 0));
+		float tiltInZ = Mathf.Abs(Mathf.DeltaAngle(rotationInEuler.z, 0));
 
 		if (tiltInX < standingThreshold && tiltInZ < standingThreshold) {
 

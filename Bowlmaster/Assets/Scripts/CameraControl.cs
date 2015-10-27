@@ -11,14 +11,14 @@ public class CameraControl : MonoBehaviour {
 		offsetFromBall = transform.position - ball.transform.position;
 	
 	}
-	
+
 	void Update () {
 
-		if (transform.position.z <= 1600){
+		if (ball.transform.position.z <= 1600){
 
 			transform.position = ball.transform.position + offsetFromBall;
 
 		}
 	
 	}
-}
+
