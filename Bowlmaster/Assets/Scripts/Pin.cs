@@ -5,15 +5,9 @@ public class Pin : MonoBehaviour {
 
 	public float standingThreshold = 5f;
 
-	// Use this for initialization
 	void Start () {
 
 		IsStanding ();
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
 	
 	}
 

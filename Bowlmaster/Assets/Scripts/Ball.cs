@@ -33,8 +33,6 @@ public class Ball : MonoBehaviour {
 
 	public void Reset(){
 
-		print ("ball reset");
-
 		isInPlay = false;
 		transform.position = ballStartPos;
 		rigidBody.velocity = Vector3.zero;
